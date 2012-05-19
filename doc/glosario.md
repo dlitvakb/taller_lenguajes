@@ -9,4 +9,5 @@ Forma Normal:
   **Es un termino donde no se puede dar ningún proximo paso de evaluación**
   * Valor
 
-
+Reducir:
+  * Dar un paso de evaluación
