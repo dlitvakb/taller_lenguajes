@@ -17,4 +17,4 @@
 
 ## Definición de términos
 
-t ::= **true** | **false** | **if** t **then** t **else** t
+_t_ ::= **true** | **false** | **if** _t_ **then** _t_ **else** _t_
