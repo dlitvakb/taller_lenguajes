@@ -22,10 +22,16 @@
 
 ### Reglas de evaluación
 
+`
 if true then **t1** else **t2** --> **t1**
+`
 
+`
 if false then **t1** else **t2** --> **t2**
+`
 
-**t1** --> true
+`
+**t1** --> **t1'**
 --------------------------------------------
-if **t1** then **t2** else **t3** --> **t2**
+if **t1** then **t2** else **t3** --> if **t1'** then **t2** else **t3**
+`
