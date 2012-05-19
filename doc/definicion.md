@@ -17,8 +17,9 @@
 
 ## Definición de términos
 
-* _v_ ::= **true** | **false**
-* _t_ ::= _v_ | **if** _t_ **then** _t_ **else** _t_
+* _nv_ ::= **0** | **succ** _nv_
+* _v_ ::= **true** | **false** | _nv_
+* _t_ ::= _v_ | **if** _t_ **then** _t_ **else** _t_ | **0** | **succ** _t_ | **pred** _t_ | **isZero** _t_
 
 ### Reglas de evaluación
 
@@ -33,6 +34,39 @@
 **t1** --> **t1'**
 ------------------------------------------------------------------------
 if **t1** then **t2** else **t3** --> if **t1'** then **t2** else **t3**
+```
+
+* E-ISZEROZERO
+`isZero 0 --> true`
+
+* E-ISZERONV
+`isZero (succ **nv**) --> false`
+
+* E-ISZERO
+```
+**t** --> **t'**
+--------------------------------
+isZero(**t**) --> isZero(**t'**)
+```
+
+* E-PREDZERO
+`pred(0) --> 0`
+
+* E-PREDNV
+`pred(succ **nv**) --> **nv**`
+
+* E-PRED
+```
+**t** --> **t'**
+----------------------------
+pred(**t**) --> pred(**t'**)
+```
+
+* E-SUCC
+```
+**t** --> **t'**
+----------------------------
+succ(**t**) --> succ(**t'**)
 ```
 
 Ejemplo:
