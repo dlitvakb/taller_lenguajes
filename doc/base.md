@@ -22,6 +22,6 @@
 
 ### Reglas de evaluación
 
-if true then _t1_ else _t2_ --> _t1_
+if true then **t1** else **t2** --> **t1**
 
-if false then _t1_ else _t2_ --> _t2_
+if false then **t1** else **t2** --> **t2**
