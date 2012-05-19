@@ -17,8 +17,8 @@
 
 ## Definición de términos
 
-_v_ ::= **true** | **false**
-_t_ ::= _v_ | **if** _t_ **then** _t_ **else** _t_
+* _v_ ::= **true** | **false**
+* _t_ ::= _v_ | **if** _t_ **then** _t_ **else** _t_
 
 ### Reglas de evaluación
 
@@ -29,6 +29,7 @@ _______________________
 ```
 
 ```
+
 if false then t1 else t2
 _______________________
         t2
