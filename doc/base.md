@@ -22,15 +22,6 @@
 
 ### Reglas de evaluación
 
-```
-if true then t1 else t2
-_______________________
-        t1
-```
+if true then _t1_ else _t2_ --> _t1_
 
-```
-
-if false then t1 else t2
-_______________________
-        t2
-```
+if false then _t1_ else _t2_ --> _t2_
