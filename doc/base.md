@@ -25,3 +25,7 @@
 if true then **t1** else **t2** --> **t1**
 
 if false then **t1** else **t2** --> **t2**
+
+**t1** --> true
+
+if **t1** then **t2** else **t3** --> **t2**
