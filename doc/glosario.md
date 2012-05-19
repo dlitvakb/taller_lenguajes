@@ -11,3 +11,6 @@ Forma Normal:
 
 Reducir:
   * Dar un paso de evaluación
+
+Esquema de reglas:
+  * Puede evaluar a infinitas reglas
