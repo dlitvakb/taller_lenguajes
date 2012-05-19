@@ -37,8 +37,8 @@ if **t1** then **t2** else **t3** --> if **t1'** then **t2** else **t3**
 
 Ejemplo:
 ```
-1. if (if false then false else false) then false else (if true then true else true)
-2. E-IF -> if false then false else (if true then true else true)
+1.              if (if false then false else false) then false else (if true then true else true)
+2. E-IF ->      if false then false else (if true then true else true)
 3. E-IFFALSE -> if true then true else true
-4. E-IFTRUE -> true
+4. E-IFTRUE ->  true
 ```
