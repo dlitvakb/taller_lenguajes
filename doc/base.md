@@ -22,14 +22,13 @@
 
 ### Reglas de evaluación
 
-`
-if true then **t1** else **t2** --> **t1**
-`
+* E-IFTRUE
+`if true then **t1** else **t2** --> **t1**`
 
-`
-if false then **t1** else **t2** --> **t2**
-`
+* E-IFFALSE
+`if false then **t1** else **t2** --> **t2**`
 
+* E-IF
 ```
 **t1** --> **t1'**
 --------------------------------------------
