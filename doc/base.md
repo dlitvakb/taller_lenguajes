@@ -22,10 +22,14 @@ _t_ ::= _v_ | **if** _t_ **then** _t_ **else** _t_
 
 ### Reglas de evaluación
 
-if true then _t1_ else _t2_
+```
+if true then t1 else t2
 _______________________
-        _t1_
+        t1
+```
 
-if false then _t1_ else _t2_
+```
+if false then t1 else t2
 _______________________
-        _t2_
+        t2
+```
