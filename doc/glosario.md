@@ -1,3 +1,7 @@
 Término:
-* Programa
-**Expresión a evaluar/interpretar**
+  **Expresión a evaluar/interpretar**
+  * Programa
+
+Regla de evaluación:
+  **Define un paso de la semántica operacional**
+
