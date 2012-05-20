@@ -68,11 +68,7 @@ class TerminoIf
 
     seccion_then = seccion.slice((_encontrar_then seccion)..-1)
 
-    begin
-      (_parentesis_fin seccion_then) + (_encontrar_then seccion)
-    rescue
-      binding.pry
-    end
+    (_parentesis_fin seccion_then) + (_encontrar_then seccion)
   end
 
   def eval
