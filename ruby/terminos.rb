@@ -1,25 +1,23 @@
-class TerminoBooleano
+class Termino
+  def eval
+    @termino
+  end
+end
+
+class TerminoBooleano < Termino
   def initialize termino
     posibles = {"true" => true, "false" => false}
     @termino = posibles[termino]
   end
-
-  def eval
-    @termino
-  end
 end
 
-class TerminoNumerico
+class TerminoNumerico < Termino
   def initialize termino
     @termino = termino.to_i
   end
-
-  def eval
-    @termino
-  end
 end
 
-class TerminoIf
+class TerminoIf < Termino
   def initialize termino_if
     @if_offset = 'if ('.size
     @then_offset = ') then ('.size
@@ -30,9 +28,9 @@ class TerminoIf
 
     @condicion_text = termino_if.slice(@if_offset..posicion_then - 2)
     if (Programa.new @condicion_text).eval
-      @resultado = (Programa.new termino_if.slice((posicion_then + @then_offset - 1)..(posicion_else - 1))).eval
+      @termino = (Programa.new termino_if.slice((posicion_then + @then_offset - 1)..(posicion_else - 1))).eval
     else
-      @resultado = (Programa.new termino_if.slice(posicion_else + @else_offset..-2)).eval
+      @termino = (Programa.new termino_if.slice(posicion_else + @else_offset..-2)).eval
     end
   end
 
@@ -64,8 +62,8 @@ class TerminoIf
   end
 
   def eval
-    puts "#{@current_step} -> Condicion: #{(Programa.new @condicion_text).eval}"
-    @resultado
+    puts " -> Condicion: #{(Programa.new @condicion_text).eval}"
+    super
   end
 end
 
