@@ -49,26 +49,18 @@ class TerminoIf
     }
   end
 
+  def _encontrar_seccion seccion, offset_inicial, desvio_inicial=0
+    seccion_anterior = seccion.slice(offset_inicial - desvio_inicial..-1)
+
+    (_parentesis_fin seccion_anterior) + offset_inicial
+  end
+
   def _encontrar_then seccion
-    # if T then T else T
-    # if if .. then .. else ..
-    # if T then if .. else T
-    # if T then T else if ..
-
-    seccion_condicion = seccion.slice(@if_offset - 1..-1)
-
-    (_parentesis_fin seccion_condicion) + @if_offset
+    _encontrar_seccion seccion, @if_offset, 1
   end
 
   def _encontrar_else seccion
-    # if T then T else T
-    # if if .. then .. else ..
-    # if T then if .. else T
-    # if T then T else if ..
-
-    seccion_then = seccion.slice((_encontrar_then seccion)..-1)
-
-    (_parentesis_fin seccion_then) + (_encontrar_then seccion)
+    _encontrar_seccion seccion, (_encontrar_then seccion)
   end
 
   def eval
