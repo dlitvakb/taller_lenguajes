@@ -19,7 +19,7 @@ class TerminoDetector
   end
 
   def es_if termino
-    /if [\(|\w|\)]+ then [\(|\w|\)]+ else [\(|\w|\)]+/.match termino
+    /if \([\(|\w|\)]+\) then \([\(|\w|\)]+\) else \([\(|\w|\)]+\)/.match termino
   end
 
   def es_numero termino
