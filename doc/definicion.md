@@ -98,6 +98,27 @@ pred(**t**) --> pred(**t'**)
 succ(**t**) --> succ(**t'**)
 ```
 
+* E-SUM0RIGHT
+`suma nv 0 --> nv`
+
+* E-SUMSUCC
+`suma nv1 (succ nv2) --> succ(suma nv1 nv2)`
+
+* E-SUMLEFT
+```
+**t1** --> **t1'**
+------------------------------------------
+suma **t1** **t2** --> suma **t1'** **t2**
+```
+
+* E-SUMRIGHT
+```
+**t2** --> **t2'**
+----------------------------------
+suma nv **t2** --> suma nv **t2'**
+```
+
+
 Ejemplo:
 ```
 1.              if (if false then false else false) then false else (if true then true else true)
